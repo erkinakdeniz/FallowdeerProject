@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>KodkopTeknoloji.Fallowdeer.$(AssemblyName)</PackageId>
+    <Title>Fallowdeer$(AssemblyName)</Title>
+    <Authors>Engin Demiroğ, ahmet-cetinkaya, Halit Enes Kalaycı, Kodlamaio Contributors</Authors>
+    <Company>Kodkop Teknoloji</Company>
+    <Product>Fallowdeer</Product>
+    <Description>Fallowdeer projesi NArchitecture alt yapısı ile geliştirilmiştir.</Description>
+    <PackageIcon>fallowdeer.png</PackageIcon>
+    <PackageTags>Core, ElasticSearch, Service</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elasticsearch.Net" Version="7.17.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
+    <PackageReference Include="NEST" Version="7.17.5" />
+    <PackageReference Include="NEST.JsonNetSerializer" Version="7.17.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="fallowdeer.png">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+</Project>
