@@ -1,24 +1,24 @@
-.swp
-.~
-project.lock.json
-.DS_Store
-.pyc
-nupkg
+# .swp
+# .~
+# project.lock.json
+# .DS_Store
+# .pyc
+# nupkg
 
-# Visual Studio Code
-.vscode
+# # Visual Studio Code
+# .vscode
 
-# Rider
-.idea
+# # Rider
+# .idea
 
-# Visual Studio
-.vs
+# # Visual Studio
+# .vs
 
-# Fleet
-.fleet
+# # Fleet
+# .fleet
 
-# Code Rush
-.cr
+# # Code Rush
+# .cr
 
 # User-specific files
 # .suo
