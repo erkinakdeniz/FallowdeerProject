@@ -21,10 +21,10 @@ nupkg
 .cr
 
 # User-specific files
-.suo
-.user
-.userosscache
-.sln.docstates
+# .suo
+# .user
+# .userosscache
+# .sln.docstates
 
 # Build results
 [Dd]ebug
@@ -41,3 +41,6 @@ bld
 msbuild.log
 msbuild.err
 msbuild.wrn
+appsettings.Development.json
+appsettings.json
+appsettings.Staging.json
