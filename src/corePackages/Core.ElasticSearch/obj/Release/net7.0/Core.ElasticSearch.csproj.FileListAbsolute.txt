@@ -1,0 +1,12 @@
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\bin\Release\net7.0\Core.ElasticSearch.deps.json
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\bin\Release\net7.0\Core.ElasticSearch.dll
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\bin\Release\net7.0\Core.ElasticSearch.pdb
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.csproj.AssemblyReference.cache
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.AssemblyInfoInputs.cache
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.AssemblyInfo.cs
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.csproj.CoreCompileInputs.cache
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.dll
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\refint\Core.ElasticSearch.dll
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\Core.ElasticSearch.pdb
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\obj\Release\net7.0\ref\Core.ElasticSearch.dll

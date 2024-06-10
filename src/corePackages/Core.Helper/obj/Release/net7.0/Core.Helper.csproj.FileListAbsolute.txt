@@ -1,0 +1,12 @@
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\bin\Release\net7.0\Core.Helper.deps.json
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\bin\Release\net7.0\Core.Helper.dll
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\bin\Release\net7.0\Core.Helper.pdb
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.csproj.AssemblyReference.cache
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.AssemblyInfoInputs.cache
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.AssemblyInfo.cs
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.csproj.CoreCompileInputs.cache
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.dll
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\refint\Core.Helper.dll
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\Core.Helper.pdb
+C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.Helper\obj\Release\net7.0\ref\Core.Helper.dll

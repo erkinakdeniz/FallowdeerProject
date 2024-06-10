@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:WebAPI.Controllers.MainControllers.AuthController">
+            <summary>
+            Kullanıcı Kayıt ve Giriş İşlemleri
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constractor
+            </summary>
+            <param name="configuration"></param>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.Login(Core.Application.Dtos.UserForLoginDto)">
+            <summary>
+            Sisteme Giriş
+            </summary>
+            <remarks>
+            Giriş işlemi sırasında lisans kontrol edilir
+            </remarks>
+            <param name="userForLoginDto"></param>
+            <returns>Giriş Bilgileri</returns>
+            <response code="200">Token bilgileri aşağıda ki gibidir</response>
+            <response code="400">Doğrulama işlemleri ve girilen bilgiler yanlış ise BusinessException çalışır</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.EmailLogin(Application.Features.MainFeatures.Auth.Commands.Login.EmailLogin.EmailLoginDto)">
+            <summary>
+            Sisteme Mail İle Giriş
+            </summary>
+            <remarks>
+            url: /api/auth/login/email
+            </remarks>
+            <param name="emailLoginDto"></param>
+            <returns>Giriş Bilgileri</returns>
+            <response code="200">Token bilgileri aşağıda ki gibidir</response>
+            <response code="400">Doğrulama işlemleri ve girilen bilgiler yanlış ise BusinessException çalışır</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.OtpLogin(Application.Features.MainFeatures.Auth.Commands.Login.OTPLogin.OtpLoginCommandDto)">
+            <summary>
+            Sisteme Tek Kullanımlık Şifre İle Giriş
+            </summary>
+            <remarks>
+            url: /api/auth/login/otp
+            </remarks>
+            <param name="otpLogin"></param>
+            <returns>Giriş Bilgileri</returns>
+            <response code="200">Token bilgileri aşağıda ki gibidir</response>
+            <response code="400">Doğrulama işlemleri ve girilen bilgiler yanlış ise BusinessException çalışır</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.Register(Core.Application.Dtos.UserForRegisterDto)">
+            <summary>
+            Dışarıdan Kayıt
+            </summary>
+            <remarks>
+            url: /api/auth/register
+            </remarks>
+            <param name="userForRegisterDto"></param>
+            <returns>Token</returns>
+            <response code="200">Token bilgileri aşağıda ki gibidir</response>
+            <response code="400">Doğrulama işlemleri ve girilen bilgiler yanlış ise BusinessException çalışır</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.RefreshToken">
+            <summary>
+            Refresh Token
+            </summary>
+            <remarks>
+            url: /api/auth/referer
+            </remarks>
+            <response code="200">Refresh Token bilgileri aşağıda ki gibidir</response>
+            <response code="400">Refresh Token geçersizse hata verir</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.RevokeToken(System.String)">
+            <summary>
+            Refresh Token Silme
+            </summary>
+            <remarks>
+            url: /api/auth/revoketoken
+            </remarks>
+            <param name="refreshToken"></param>
+            <response code="200">Başarılı</response>
+            <response code="400">Refresh Token silme işlemi başarısız ise</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.EnableEmailAuthenticator">
+            <summary>
+            Email Doğrulamayı Aktif et
+            </summary>
+            <remarks>
+            url: /api/auth/enableemailauthenticator
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Kullanıcı yoksa veya hata oluşursa</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.DisableEmailAuthenticator">
+            <summary>
+            Email Doğrulama Devredışı Bırakılır
+            </summary>
+            <remarks>
+            url: /api/auth/enableemailauthenticator
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Kullanıcı yoksa veya hata oluşursa</response>  
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.EnableOtpAuthenticator">
+            <summary>
+            Tek Kullanımlık Şifre Doğrulamayı Aktif Et
+            </summary>
+            <remarks>
+            url: /api/auth/enableotpauthenticator
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Kullanıcı yoksa veya hata oluşursa</response> 
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.DisableOtpAuthenticator">
+            <summary>
+            Tek Kullanımlık Şifre Doğrulamayı Devredışı Bırak
+            </summary>
+            <remarks>
+            url: /api/auth/disableotpauthenticator
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Kullanıcı yoksa veya hata oluşursa</response> 
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.VerifyEmailAuthenticator(Application.Features.MainFeatures.Auth.Commands.VerifyEmailAuthenticator.VerifyEmailAuthenticatorCommand)">
+            <summary>
+            Email Doğrula
+            </summary>
+            <remarks>
+            url: /api/auth/verifyemailauthenticator
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Kullanıcı yoksa veya hata oluşursa</response> 
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.VerifyOtpAuthenticator(Application.Features.MainFeatures.Auth.Commands.VerifyOtpAuthenticator.VerifyOtpAuthenticatorDto)">
+            <summary>
+            Tek Kullanımlık Şifre Doğrulama
+            </summary>
+            <remarks>
+            url: /api/auth/verifyotpauthenticator
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Kullanıcı yoksa veya hata oluşursa</response> 
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.PageGuard">
+            <summary>
+            Sayfa Güvenliği
+            </summary>
+            <remarks>
+            url: /api/auth
+            </remarks>
+            <response code="200">Başarılı</response>
+            <response code="400">Token Geçersizse</response> 
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.ForgotPassword(Application.Features.MainFeatures.Auth.Commands.ForgotPassword.ForgotPasswordUserControlCommand)">
+            <summary>
+            Şifremi Unuttum Butonu İçin
+            </summary>
+            <remarks>
+            Kullanıcı şifresini unuttuğunda kullanılır. Kullanıcıya E-Posta olarak Kod gönderilir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.ResetPassword(Application.Features.MainFeatures.Auth.Commands.ResetPassword.ResetPasswordCommand)">
+            <summary>
+            Şifre Sıfırla
+            </summary>
+            <remarks>
+            Kullanıcı şifresini sıfırlamak istediğinde kullanılır.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.VerifyCode(Application.Features.MainFeatures.Auth.Commands.VerifyCode.VerifyCodeCommand)">
+            <summary>
+            Kod Doğrulama İşlemi
+            </summary>
+            <remarks>
+            E-Posta ve kod gönderilerek sistemde eşleşme sağlanıp sağlanmadığı bakılır.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.AuthController.AuthenticatorTypes">
+            <summary>
+            Doğrulama Tiplerini Getir
+            </summary>
+            <remarks>
+            Kullanıcının doğrulama tiplerini getirir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="T:WebAPI.Controllers.MainControllers.LibraryController">
+            <summary>
+            Dosya Yönetimi
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.GetFolders">
+            <summary>
+            Tüm Klasörleri Getir
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.GetFiles">
+            <summary>
+            Tüm Dosyaları Getir
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.GetFiles(Application.Features.MainFeatures.Library.Queries.Files.GetLibraryFileQuery)">
+            <summary>
+            Belirtilen Dizinde ki Dosyaları Getir
+            </summary>
+            <param name="getFileQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.GetFilesPopup(Application.Features.MainFeatures.Library.Queries.Files.GetLibraryFileForPopupQuery)">
+            <summary>
+            Popup Üzerinden Dosya Seçimi İçin Gelecek Dosyalar
+            </summary>
+            <param name="getFileQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.CreateFolder(Application.Features.MainFeatures.Library.Commands.Create.CreateLibraryFolderCommand)">
+            <summary>
+            Klasör Oluştur
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.UploadFiles(Application.Features.MainFeatures.Library.Commands.Upload.UploadLibraryFileCommand)">
+            <summary>
+            Dosyaları Yükle
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.DeleteFile(Application.Features.MainFeatures.Library.Commands.Delete.DeleteLibraryFileCommand)">
+            <summary>
+            Dosya Sil
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.LibraryController.DeleteFolder(Application.Features.MainFeatures.Library.Commands.Delete.DeleteLibraryFolderCommand)">
+            <summary>
+            Klasör Sil
+            </summary>
+            <param name="command"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPI.Controllers.MainControllers.OperationClaimsController">
+            <summary>
+            Yetki Yönetimi
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.OperationClaimsController.GetById(Application.Features.MainFeatures.OperationClaims.Queries.GetById.GetByIdOperationClaimQuery)">
+            <summary>
+            Id'ye Göre Yetki Getir
+            </summary>
+            <remarks>
+            Id'ye göre kayıtlı yetkiyi getirir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.OperationClaimsController.GetAll">
+            <summary>
+            Tüm Yetkiler
+            </summary>
+            <remarks>
+            Sistemde ki tüm yetkileri getirir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.OperationClaimsController.GetList(Core.Application.Requests.PageRequest)">
+            <summary>
+            Tüm Yetkileri Sayfalama Yapısıyla Getir
+            </summary>
+            <remarks>
+            Pagination yapısı vardır.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.OperationClaimsController.Add(Application.Features.MainFeatures.OperationClaims.Commands.Create.CreateOperationClaimCommand)">
+            <summary>
+            Yetki Ekler
+            </summary>
+            <remarks>
+            Sisteme yeni yetki ekler.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.OperationClaimsController.Update(Application.Features.MainFeatures.OperationClaims.Commands.Update.UpdateOperationClaimCommand)">
+            <summary>
+            Yetki Güncelle
+            </summary>
+            <remarks>
+            Sistemde ki yetkiyi günceller.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.OperationClaimsController.Delete(Application.Features.MainFeatures.OperationClaims.Commands.Delete.DeleteOperationClaimCommand)">
+            <summary>
+            Yetki Sil
+            </summary>
+            <remarks>
+            Sistemde ki yetkiyi siler
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="T:WebAPI.Controllers.MainControllers.UserOperationClaimsController">
+            <summary>
+            Kullanıcı Yetkileri
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UserOperationClaimsController.GetById(Application.Features.MainFeatures.UserOperationClaims.Queries.GetById.GetByIdUserOperationClaimQuery)">
+            <summary>
+            Id'ye Göre Kullanıcı Yetkisi Getir
+            </summary>
+            <remarks>
+            Kullanıcının yetkisini getirir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UserOperationClaimsController.GetByUserId(Application.Features.MainFeatures.UserOperationClaims.Queries.GetByUserId.GetByUserIdUserOperationClaimsQuery)">
+            <summary>
+            Kullanısının Id'sine Göre Kullanıcın Yetkisini Getir
+            </summary>
+            <remarks>
+            Kullanıcının yetkisini getirir
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UserOperationClaimsController.GetList(Core.Application.Requests.PageRequest)">
+            <summary>
+            Sayfalama Mantığı ile Kullanıcıların Yetkilerini Getir
+            </summary>
+            <remarks>
+            Pagination yapısı kullanılır.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UserOperationClaimsController.Add(Application.Features.MainFeatures.UserOperationClaims.Commands.Create.CreateUserOperationClaimCommand)">
+             <summary>
+             Kullanıcıya Yetki Ekle
+             </summary>
+             <remarks>
+            
+             </remarks>
+             <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UserOperationClaimsController.Update(Application.Features.MainFeatures.UserOperationClaims.Commands.Update.UpdateUserOperationClaimCommand)">
+            <summary>
+            Kullanıcının Yetkisini Güncelle
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UserOperationClaimsController.Delete(Application.Features.MainFeatures.UserOperationClaims.Commands.Delete.DeleteUserOperationClaimCommand)">
+            <summary>
+            Kullanıcının Yetkisini Siler
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="T:WebAPI.Controllers.MainControllers.UsersController">
+            <summary>
+            Kullanıcı İşlemleri
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.GetById(Application.Features.MainFeatures.Users.Queries.GetById.GetByIdUserQuery)">
+            <summary>
+            Id'sine Göre Kullanıcı Getir
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.GetList(Core.Application.Requests.PageRequest)">
+            <summary>
+            Kullanıcıları Sayfalama Mantığı ile Getirir
+            </summary>
+            <remarks>
+            Pagination yapısı var.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.Add(Application.Features.MainFeatures.Users.Commands.Create.CreateUserCommand)">
+            <summary>
+            Kullanıcı Ekle
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:WebAPI.Controllers.MainControllers.UsersController.Update(Application.Features.MainFeatures.Users.Commands.Update.UpdateUserCommand)" -->
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.UpdateChangePassword(Application.Features.MainFeatures.Users.Commands.Update.ChangePassword.UpdateUserChangePasswordCommand)">
+            <summary>
+            Adminlerin Şifreyi Değiştirmesini Sağlar
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.UpdatePassword(Application.Features.MainFeatures.Users.Commands.Update.Password.UpdateUserPasswordDto)">
+            <summary>
+            Kullanıcılar Kendi Şifresini Değiştirir
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.UpdateProfile(Application.Features.MainFeatures.Users.Commands.Update.Profile.UpdateUserProfileDto)">
+            <summary>
+            Kullanıcılar Profilini Günceller
+            </summary>
+            <remarks>
+            Her kullanıcı kendi profilini günceller.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.UsersController.Delete(Application.Features.MainFeatures.Users.Commands.Delete.DeleteUserCommand)">
+            <summary>
+            Kullanıcı Sil
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="T:WebAPI.Controllers.MainControllers.WebOptionsController">
+            <summary>
+            Web Sitesi Ayarları
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.GetWebOptions">
+            <summary>
+            Tüm Ayarları Getir
+            </summary>
+            <remarks>
+            Sistemde ki tüm ayarları getirir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.Create(Application.Features.MainFeatures.WebOptions.Commands.Create.CreateWebOptionCommand)">
+            <summary>
+            Yeni Ayar Oluştur
+            </summary>
+            <remarks>
+            Sisteme yeni ayar oluşturur.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.Delete(Application.Features.MainFeatures.WebOptions.Commands.Delete.DeleteWebOptionCommand)">
+            <summary>
+            Belirtilen Ayarı Sil
+            </summary>
+            <remarks>
+            Sistemde ki belirtilen ayarı siler
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.Update(Application.Features.MainFeatures.WebOptions.Commands.Update.UpdateWebOptionCommand)">
+            <summary>
+            Belirtilen Ayarı Güncelle
+            </summary>
+            <remarks>
+            Sistemde ki ayarı günceller
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.SaveImages(Application.Features.MainFeatures.WebOptions.Commands.SaveHeaderLogo.SaveWebOptionImageCommand)">
+            <summary>
+            Sisteme Resim Kaydeder
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.SliderGetAll">
+            <summary>
+            Tüm Slaytları Getirir
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.SliderGetById(Application.Features.MainFeatures.WebOptions.Queries.Sliders.GetSliderQuery)">
+            <summary>
+            Slayt Id'sine Göre Slayt Getirir
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.SliderGetByCategoryId(Application.Features.MainFeatures.WebOptions.Queries.Sliders.GetByCategorySlidesQuery)">
+            <summary>
+            Slaytın Kategorisine Göre Slaytları Getirir
+            </summary>
+            <remarks>
+            Kategori Id'sine Göre slaytlar gelir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.CreateSlider(Application.Features.MainFeatures.WebOptions.Commands.Create.CreateSlider.CreateSliderCommand)">
+            <summary>
+            Toplu Slayt Oluştur
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.DeleteSlider(Application.Features.MainFeatures.WebOptions.Commands.Delete.DeleteSlider.DeleteSliderCommand)">
+            <summary>
+            Slayt Sil
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.UpdateSlider(Application.Features.MainFeatures.WebOptions.Commands.Update.UpdateSlider.UpdateSliderCommand)">
+            <summary>
+            Toplu Slayt Güncelle
+            </summary>
+            <remarks>
+            
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="M:WebAPI.Controllers.MainControllers.WebOptionsController.GetSilderCategory">
+            <summary>
+            Slayt Kategorilerini Getirir.
+            </summary>
+            <remarks>
+            Slayt için olan kategoriler gelir.
+            </remarks>
+            <response code="200">Başarılı</response>
+        </member>
+        <member name="T:WebAPI.Controllers.MainControllers.WebSiteController">
+            <summary>
+            Frond End İçin
+            </summary>
+        </member>
+    </members>
+</doc>

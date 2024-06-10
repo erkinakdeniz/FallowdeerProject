@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\Library\\Raporlar\\4061575.jpg",
+      "PackagePath": "staticwebassets\\Library\\Raporlar\\4061575.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\Library\\Resimler\\Gridler\\4061575.jpg",
+      "PackagePath": "staticwebassets\\Library\\Resimler\\Gridler\\4061575.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\Library\\Resimler\\Slaytlar\\aaaaaaa.webp",
+      "PackagePath": "staticwebassets\\Library\\Resimler\\Slaytlar\\aaaaaaa.webp"
+    },
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\Library\\Resimler\\Slaytlar\\fallowdeerLogo_2.png",
+      "PackagePath": "staticwebassets\\Library\\Resimler\\Slaytlar\\fallowdeerLogo_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\Library\\deneme2\\fallowdeerLogo_1.png",
+      "PackagePath": "staticwebassets\\Library\\deneme2\\fallowdeerLogo_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\Library\\erkin\\basar ve\\4062519.psd",
+      "PackagePath": "staticwebassets\\Library\\erkin\\basar ve\\4062519.psd"
+    },
+    {
+      "Id": "C:\\Users\\Erkin\\Desktop\\Back-EndBase\\Fallowdeer\\src\\fallowdeer\\WebAPI\\wwwroot\\uploads\\systems\\HeaderLogo.png",
+      "PackagePath": "staticwebassets\\uploads\\systems\\HeaderLogo.png"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\win-x64\\staticwebassets\\msbuild.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\win-x64\\staticwebassets\\msbuild.build.WebAPI.props",
+      "PackagePath": "build\\WebAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\win-x64\\staticwebassets\\msbuild.buildMultiTargeting.WebAPI.props",
+      "PackagePath": "buildMultiTargeting\\WebAPI.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\win-x64\\staticwebassets\\msbuild.buildTransitive.WebAPI.props",
+      "PackagePath": "buildTransitive\\WebAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

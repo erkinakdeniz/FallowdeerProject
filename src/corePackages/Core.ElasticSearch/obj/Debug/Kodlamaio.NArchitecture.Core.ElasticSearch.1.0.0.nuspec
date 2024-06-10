@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Kodlamaio.NArchitecture.Core.ElasticSearch</id>
+    <version>1.0.0</version>
+    <title>NArchitecture Core.ElasticSearch</title>
+    <authors>Engin Demiroğ, ahmet-cetinkaya, Halit Enes Kalaycı, Kodlamaio Contributors</authors>
+    <license type="file">LICENSE</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>n-architecture-logo.png</icon>
+    <readme>README.md</readme>
+    <description>Core package for elastic search in NArchitecture project.</description>
+    <tags>Core, ElasticSearch, Service</tags>
+    <repository url="https://github.com/kodlamaio-projects/nArchitecture.Core" />
+    <dependencies>
+      <group targetFramework="net7.0">
+        <dependency id="Elasticsearch.Net" version="7.17.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="7.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="7.0.4" exclude="Build,Analyzers" />
+        <dependency id="NEST" version="7.17.5" exclude="Build,Analyzers" />
+        <dependency id="NEST.JsonNetSerializer" version="7.17.5" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\Core.ElasticSearch\bin\Debug\net7.0\Core.ElasticSearch.dll" target="lib\net7.0\Core.ElasticSearch.dll" />
+    <file src="C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\docs\n-architecture-logo.png" target="\n-architecture-logo.png" />
+    <file src="C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\LICENSE" target="\LICENSE" />
+    <file src="C:\Users\Erkin\Desktop\Back-EndBase\Fallowdeer\src\corePackages\README.md" target="\README.md" />
+  </files>
+</package>
